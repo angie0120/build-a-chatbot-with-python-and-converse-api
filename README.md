@@ -82,7 +82,9 @@ model_id = "amazon.nova-micro-v1:0"
 - model_id selects which Bedrock model your chatbot will use
 
 #### Initialize the conversation history list
-`messages = []`
+```python
+messages = []
+```
 
 This list stores the entire conversation in the format Bedrock expects:
 
@@ -117,7 +119,8 @@ messages.append(
 This appends a message in the exact structure required by converse().
 
 #### Call the Converse API
-```response = client.converse(
+```python
+response = client.converse(
     modelId=model_id,
     messages=messages,
     inferenceConfig={"maxTokens": 100, "temperature": 0.7},
