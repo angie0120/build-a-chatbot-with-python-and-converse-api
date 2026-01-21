@@ -47,20 +47,28 @@ To confirm you're authenticated:
 `aws sts get-caller-identity`
 
 #### 2) Create a virtual environment (recommended)
-
-`python3 -m venv venv`
+```python
+python -m venv venv
+```
 
 Activate it:
-`source venv/bin/activate`        # macOS/Linux
-`venv\Scripts\activate`           # Windows
+```python
+# Windows (Git Bash)
+source venv/Scripts/activate
 
+# macOS/Linux
+source venv/bin/activate
+
+ # Windows (Command Prompt)
+venv\Scripts\activate         
 
 #### 3) Install boto3
 `pip install boto3`
 
 ### Run the script
-python chatbot.py
-
+```python
+python basic-bedrock-chatbot.py
+```
 You should see:
 
 `Bedrock Chatbot is running! Type 'exit' to quit.`
@@ -116,7 +124,7 @@ messages.append(
 )
 ```
 
-This appends a message in the exact structure required by converse().
+This appends a message in the exact structure required by `converse()`.
 
 #### Call the Converse API
 ```python
@@ -150,8 +158,36 @@ messages.append(
 )
 ```
 
-This is the key step that gives the model conversation memory.
+This is the key step that gives the model conversation memory. Each time you send a new message, Bedrock receives the full history again.
 
-Each time you send a new message, Bedrock receives the full history again.
+---
+
+## Terminal output demo screenshot
+
+/assets/chatbot_conversation.png
+![Terminal Demo](./assets/chatbot_conversation.png)
+
+You’ll notice some replies get cut off at the end. That happens because the chatbot limits how long the model is allowed to respond:
+```python
+inferenceConfig={"maxTokens": 100, "temperature": 0.7}
+```
+
+`maxTokens` sets the maximum size of each reply. If the model starts generating a longer answer (like a list of bullet points), it can hit the limit and stop mid-sentence, which is why you see lines like:
+- “Neptune …”
+- “Jupiter is a …”
+
+It’s not an error. It just means the response hit the token limit.
+
+---
+
+## YouTube Tutorial
+
+📺 Watch the full walkthrough on YouTube: Build a Simple Chatbot with Amazon Bedrock’s Converse API + Python
+
+In the video, I explain:
+- how the chatbot loop works
+- how `messages = []` stores chat history
+- why sending the full `messages` list into `converse()` creates “memory”
+- how the `exit` command ends the session
 
 ---
