@@ -42,7 +42,7 @@ aws configure sso
 aws configure
 ```
 
-To confirm you're authenticated:
+Confirm you're authenticated:
 
 `aws sts get-caller-identity`
 
@@ -72,7 +72,7 @@ pip install boto3
 ```bash
 python basic-bedrock-chatbot.py
 ```
-You should see:
+You should see this message in the terminal:
 
 `Bedrock Chatbot is running! Type 'exit' to quit.`
 
@@ -186,7 +186,7 @@ It’s not an error. It just means the response hit the token limit.
 
 📺 Watch the full walkthrough on YouTube: [Build a Simple Chatbot with Converse API + Python](https://youtu.be/M882yjnGtNU)
 
-In the video, I explain:
+In the video, you'll see:
 - how the chatbot loop works
 - how `messages = []` stores chat history
 - why sending the full `messages` list into `converse()` creates “memory”
