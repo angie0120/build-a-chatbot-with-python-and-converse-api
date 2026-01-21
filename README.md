@@ -47,26 +47,29 @@ To confirm you're authenticated:
 `aws sts get-caller-identity`
 
 #### 2) Create a virtual environment (recommended)
-```python
+```bash
 python -m venv venv
 ```
 
 Activate it:
-```python
+```bash
 # Windows (Git Bash)
 source venv/Scripts/activate
 
 # macOS/Linux
 source venv/bin/activate
 
- # Windows (Command Prompt)
+# Windows (Command Prompt)
 venv\Scripts\activate         
+```
 
 #### 3) Install boto3
-`pip install boto3`
+```bash
+pip install boto3
+```
 
 ### Run the script
-```python
+```bash
 python basic-bedrock-chatbot.py
 ```
 You should see:
@@ -164,7 +167,6 @@ This is the key step that gives the model conversation memory. Each time you sen
 
 ## Terminal output demo screenshot
 
-/assets/chatbot_conversation.png
 ![Terminal Demo](./assets/chatbot_conversation.png)
 
 You’ll notice some replies get cut off at the end. That happens because the chatbot limits how long the model is allowed to respond:
@@ -182,7 +184,7 @@ It’s not an error. It just means the response hit the token limit.
 
 ## YouTube Tutorial
 
-📺 Watch the full walkthrough on YouTube: Build a Simple Chatbot with Amazon Bedrock’s Converse API + Python
+📺 Watch the full walkthrough on YouTube: [Build a Simple Chatbot with Converse API + Python](https://www.youtube.com/@angie-in-the-cloud)
 
 In the video, I explain:
 - how the chatbot loop works
