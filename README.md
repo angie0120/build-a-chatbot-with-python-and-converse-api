@@ -184,7 +184,7 @@ It’s not an error. It just means the response hit the token limit.
 
 ## YouTube Tutorial
 
-📺 Watch the full walkthrough on YouTube: [Build a Simple Chatbot with Converse API + Python](https://www.youtube.com/@angie-in-the-cloud)
+📺 Watch the full walkthrough on YouTube: [Build a Simple Chatbot with Converse API + Python](https://youtu.be/M882yjnGtNU)
 
 In the video, I explain:
 - how the chatbot loop works
