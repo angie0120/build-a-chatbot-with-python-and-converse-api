@@ -27,7 +27,7 @@ It shows the core concept behind real chat apps:
 
 ## Logic Flow
 
-
+![Flowchart](./assets/basic-chatbot.png)
 
 ---
 
