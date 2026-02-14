@@ -169,7 +169,8 @@ This is the key step that gives the model conversation memory. Each time you sen
 
 ![Terminal Demo](./assets/chatbot_conversation.png)
 
-You’ll notice some replies get cut off at the end. That happens because the chatbot limits how long the model is allowed to respond:
+**You’ll notice some replies get cut off at the end. That happens because the chatbot limits how long the model is allowed to respond:**
+
 ```python
 inferenceConfig={"maxTokens": 100, "temperature": 0.7}
 ```
